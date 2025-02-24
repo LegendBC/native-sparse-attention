@@ -21,7 +21,7 @@ Efficient Triton implementations for [Native Sparse Attention: Hardware-Aligned 
 ```py
 from native_sparse_attention.ops.parallel import parallel_nsa
 
-B, T, H, HQ, D = 4, 2048, 4, 64, 64
+B, T, H, HQ, D, S = 4, 2048, 4, 64, 64, 16
 block_size = 64
 q = torch.randn((B, T, HQ, D), dtype=dtype, device='cuda').requires_grad_(True)
 k = torch.randn((B, T, H, D), dtype=dtype, device='cuda').requires_grad_(True)
